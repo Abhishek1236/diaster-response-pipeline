@@ -6,11 +6,11 @@ In this project I  applied the data pipeline skills learned to analyze disaster 
 
 **Dependencies**
 
-Python 3.5+ 
-Machine Learning Libraries: NumPy, SciPy, Pandas, Scikit-Learn
-Natural Language Process Libraries: NLTK
-SQLlite Database Libraqries: SQLalchemy
-Web App and Data Visualization: Flask, Plotly
+1.Python 3.5+ 
+2.Machine Learning Libraries: NumPy, SciPy, Pandas, Scikit-Learn
+3.Natural Language Process Libraries: NLTK
+4.SQLlite Database Libraqries: SQLalchemy
+5.Web App and Data Visualization: Flask, Plotly
 You can install each dependencies by using pip.
 
 **Installation**
