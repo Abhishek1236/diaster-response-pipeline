@@ -1,3 +1,15 @@
+"""
+Classifier Trainer
+Project: Disaster Response Pipeline (Udacity - Data Science Nanodegree)
+Sample Script Syntax:
+> python train_classifier.py <path to sqllite  destination db> <path to the pickle file>
+Sample Script Execution:
+> python train_classifier.py ../data/disaster_response_db.db classifier.pkl
+Arguments:
+    1) Path to SQLite destination database (e.g. disaster_response_db.db)
+    2) Path to pickle file name where ML model needs to be saved (e.g. classifier.pkl)
+"""
+#importing the libraries
 import sys
 import pandas as pd
 import numpy as np
@@ -31,13 +43,24 @@ def load_data(database_filepath):
     Y : Target Dataframe
     category names = Target Labels
     '''
-    engine = create_engine('sqlite:///{}'.format(database_filepath))
-    df = pd.read_sql_table('Disasters', con=engine)
+    engine = create_engine('sqlite:///' + database_filepath)
+    table_name = os.path.basename(database_filepath).replace(".db","") + "_table"
+    df = pd.read_sql_table(table_name,engine)
+    
+    #Remove child alone as it has all zeros only
+    df = df.drop(['child_alone'],axis=1)
+    
+    # Given value 2 in the related field are neglible so it could be error. Replacing 2 with 1 to consider it a valid response.
+    # Alternatively, we could have assumed it to be 0 also. In the absence of information I have gone with majority class.
+    df['related']=df['related'].map(lambda x: 1 if x == 2 else x)
+    
     X = df['message']
-    Y = df.iloc[:, 4:]
-    Y['related']=Y['related'].map(lambda x: 1 if x == 2 else x)
-    category_names = Y.columns
-    return X,Y,category_names
+    y = df.iloc[:,4:]
+    
+    #print(X)
+    #print(y.columns)
+    category_names = y.columns # This will be used for visualization purpose
+    return X, y, category_names
 
 
 
