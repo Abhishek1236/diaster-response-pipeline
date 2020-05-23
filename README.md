@@ -49,3 +49,27 @@ C. **run.py** :A Flask Web App that visualizes the results
 **Acknowledgement**
 1. **Udacity** for providing knowledge about the Etl pipelines and it application to solve real world data science problems.
 2. **Figure Eight** for providing the data.
+
+1. This is an example of a message we can type to test the performance of the model
+
+![Sample Input](screenshots/sample_input.png)
+
+2. After clicking **Classify Message**, we can see the categories which the message belongs to highlighted in green
+
+![Sample Output](screenshots/sample_output.png)
+
+3. The main page shows some graphs about training dataset, provided by Figure Eight
+
+![Main Page](screenshots/main_page.png)
+
+4. Sample run of process_data.py
+
+![Process Data](screenshots/process_data.png)
+
+5. Sample run of train_classifier.py
+
+![Train Classifier without Category Level Precision Recall](screenshots/train_classifier.png)
+
+6. Sample run of train_classifier.py with precision, recall etc. for each category
+
+![Train Classifier with Category Level Precision Recall](screenshots/train_classifier_category_precision_recall.png)
