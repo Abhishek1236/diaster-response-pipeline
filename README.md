@@ -46,9 +46,11 @@ A Machine Learning Pipeline that
 
 C. **run.py** :A Flask Web App that visualizes the results
 
-**Acknowledgement**
-1. **Udacity** for providing knowledge about the Etl pipelines and it application to solve real world data science problems.
-2. **Figure Eight** for providing the data.
+<a name="acknowledgement"></a>
+## Acknowledgements
+
+* [Udacity](https://www.udacity.com/) for providing an amazing Data Science Nanodegree Program
+* [Figure Eight](https://www.figure-eight.com/) for providing the relevant dataset to train the model
 
 1. This is an example of a message we can type to test the performance of the model
 
